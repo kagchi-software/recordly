@@ -33,22 +33,22 @@ class AppServiceProvider extends ServiceProvider {
         FilamentDocs::register([
             DocsVar::make('$MONTH_ROMAWI')
                 ->label('Month (Romawi)')
-                ->value(fn () => toRoman(Carbon::now()->subDays(10)->month)),
+                ->value(fn () => toRoman(Carbon::now()->month)),
             DocsVar::make('$MONTH_NUMBER')
                 ->label('Month (Number)')
-                ->value(fn () => Carbon::now()->subDays(10)->month),
+                ->value(fn () => Carbon::now()->month),
             DocsVar::make('$YEAR_NUMBER')
                 ->label('Year (Number)')
-                ->value(fn () => Carbon::now()->subDays(10)->year),
+                ->value(fn () => Carbon::now()->year),
             DocsVar::make('$MONTH_NAME')
                 ->label('Month (Indonesian)')
-                ->value(fn () => Carbon::now()->subDays(10)->locale('id')->translatedFormat('F')),
+                ->value(fn () => Carbon::now()->locale('id')->translatedFormat('F')),
             DocsVar::make('$D_NUMBER')
                 ->label('Day (Number)')
-                ->value(fn () => Carbon::now()->subDays(10)->day),
+                ->value(fn () => Carbon::now()->day),
             DocsVar::make('$D_NAME')
                 ->label('Day (Indonesian)')
-                ->value(fn () => Carbon::now()->subDays(10)->locale('id')->translatedFormat('l')),
+                ->value(fn () => Carbon::now()->locale('id')->translatedFormat('l')),
             DocsVar::make('$NUM')
                 ->label('Number of Documents This Month (3 Digits)')
                 ->value(function () {
